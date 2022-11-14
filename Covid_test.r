@@ -1,4 +1,4 @@
-Library #####
+#Library ----
 library(tidyverse)
 library(readr)
 library(dplyr)
@@ -8,16 +8,14 @@ dim(covid_df)
 colnames(covid_df)
 head(covid_df)
 glimpse(covid_df)
-#Perché la glimpse()funzione è utile quando si esplora un nuovo set di dati?
+
+
 covid_df_all_states<- covid_df %>% 
   filter(Province_State=="All States") %>% 
   select(-Province_State)
 
 dim(covid_df)
 dim(covid_df_all_states)
-
-#Perché possiamo rimuovere la Province_Statecolonna senza perdere informazioni dal nostro set di dati?
-#-perchè non è più necessaria perchè abbiamo filtrato il dato che ci era necessario
 
 covid_df_all_states_daily<-covid_df_all_states %>% 
   select(Date, Country_Region, active, hospitalizedCurr,daily_tested,daily_positive)
