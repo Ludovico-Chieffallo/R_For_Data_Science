@@ -12,11 +12,11 @@ library(dplyr)
 #THE FIRST STEP IS TO DOWNLOAD THE .CSV FILE --> (https://dq-content.s3.amazonaws.com/505/covid19.csv)
 
 covid_df <- read_csv("D:/Desktop/covid19.csv") #WE CAN USE THE read_csv() FUNCTION TO READ OUR FILE (REMEMBER THAT THE FUNCTION IS CONTAINED IN THE readr PACKAGE)
+vector_cols<-colnames(covid_df)   
 
 #Let's explore the data
 
 dim(covid_df)        #dim() function to see the size of the dataframe
-colnames(covid_df)   #colnames() function to check the column names
 head(covid_df)       #head() function to see the first rows of the dataframe
 glimpse(covid_df)    #We use the glimpse() function x to see the summary of the dataframe
 
